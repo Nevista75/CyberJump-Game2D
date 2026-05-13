@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+
+            AudioManager.Instance.Play(AudioManager.SoundType.Jump);
         }
     }
 
@@ -79,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Obstacle"))
         {
             Debug.Log("Player Mati");
+
+            AudioManager.Instance.Play(AudioManager.SoundType.Hurt);
 
             rb.linearVelocity = Vector2.zero;
 
