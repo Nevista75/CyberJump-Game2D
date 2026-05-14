@@ -6,8 +6,13 @@ public class AudioManager : MonoBehaviour
 {
     public enum SoundType
     {
+        Move,
         Jump,
         Hurt,
+        Land,
+        Click,
+        MenuMusic,
+        Level1Music,
     }
     [System.Serializable]
     public class Sound
@@ -25,6 +30,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public Sound[] AllSounds;
     private Dictionary<SoundType, Sound> _soundDictionary = new Dictionary<SoundType, Sound>();
+    private Dictionary<SoundType, GameObject> _activeLongSounds = new Dictionary<SoundType, GameObject>();
     private AudioSource _musicSource;
 
     private void Awake()
@@ -58,6 +64,36 @@ public class AudioManager : MonoBehaviour
         Destroy(soundObj, s.Clip.length);
     }
 
+    public void PlayLong(SoundType type, bool action)
+    {
+        if (!_soundDictionary.TryGetValue(type, out Sound s))
+        {
+            Debug.LogWarning($"Sound type {type} not found!");
+            return;
+        }
+
+
+        if(action) {
+            if (_activeLongSounds.ContainsKey(type)) return;
+            var soundObj = new GameObject($"Sound_{type}");
+            var audioSrc = soundObj.AddComponent<AudioSource>();
+
+            audioSrc.clip = s.Clip;
+            audioSrc.volume = s.Volume;
+
+            audioSrc.loop = true;
+            audioSrc.Play();
+
+            _activeLongSounds.Add(type, soundObj);
+        } else
+        {
+            if (_activeLongSounds.TryGetValue(type, out GameObject soundObj)) {
+                Destroy(soundObj);
+                _activeLongSounds.Remove(type);
+            }
+        }
+    }
+
     public void ChangeMusic(SoundType type)
     {
         if (!_soundDictionary.TryGetValue(type, out Sound track))
@@ -74,6 +110,7 @@ public class AudioManager : MonoBehaviour
         }
 
         _musicSource.clip = track.Clip;
+        _musicSource.volume = track.Volume;
         _musicSource.Play();
     }
 }
