@@ -3,7 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManager.Instance.ChangeMusic(AudioManager.SoundType.MenuMusic);
+    }
+
     public void PlayGame()
+    {
+        AudioManager.Instance.Play(AudioManager.SoundType.Click);
+        Invoke(nameof(loadLevel1), 0.5f);
+    }
+
+    private void loadLevel1()
     {
         SceneManager.LoadScene("Level1");
     }

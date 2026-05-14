@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     private void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+
+        if (isGrounded) AudioManager.Instance.PlayLong(AudioManager.SoundType.Move, !context.canceled);
     }
 
     private void Jump(InputAction.CallbackContext context)
@@ -65,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            
+            AudioManager.Instance.Play(AudioManager.SoundType.Land);
         }
     }
 
