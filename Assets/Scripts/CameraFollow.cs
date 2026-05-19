@@ -2,17 +2,34 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    [SerializeField] private Transform player;
+
+    [SerializeField] private float upperLimit = 2f;
+
+    [SerializeField] private float verticalOffset = 1.5f;
+
+    private Vector3 originalPosition;
 
     private Vector3 offset;
 
     private void Start()
     {
-        offset = transform.position - target.position;
+        originalPosition = transform.position;
     }
 
     private void LateUpdate()
     {
-        transform.position = target.position + offset;
+        float targetY = originalPosition.y;
+
+        if (player.position.y > upperLimit)
+        {
+            targetY = player.position.y - verticalOffset;
+        }
+
+        transform.position = new Vector3(
+            transform.position.x,
+            targetY,
+            transform.position.z
+        );
     }
 }
