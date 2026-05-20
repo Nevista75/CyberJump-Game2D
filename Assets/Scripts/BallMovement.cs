@@ -9,7 +9,6 @@ public class BallMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     private float moveInput;
-
     private bool gravityUp = false;
 
     private void Awake()
