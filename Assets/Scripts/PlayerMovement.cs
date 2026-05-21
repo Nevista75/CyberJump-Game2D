@@ -4,12 +4,10 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-
     private PlayerInput inputActions;
-
     private Vector2 moveInput;
-
     private Vector3 spawnPosition;
+    private Vector3 cameraSpawnPosition;
 
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpForce = 25f;
@@ -23,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
         inputActions = new PlayerInput();
 
         spawnPosition = transform.position;
+
+        cameraSpawnPosition = Camera.main.transform.position;
     }
 
     private void OnEnable()
@@ -91,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
 
             transform.position = spawnPosition;
+
+            Camera.main.transform.position = cameraSpawnPosition;
         }
     }
 }
