@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            
+                
             AudioManager.Instance.Play(AudioManager.SoundType.Land);
         }
     }

@@ -9,6 +9,7 @@ public class BallMovement : MonoBehaviour
     private Rigidbody2D rb;
     private float moveInput;
     private bool gravityUp = false;
+    private bool isGrounded;
     private Vector3 spawnPosition;
     private Vector3 cameraSpawnPosition;
 
@@ -28,6 +29,7 @@ public class BallMovement : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>().x;
+        if (isGrounded) AudioManager.Instance.PlayLong(AudioManager.SoundType.Move, value.Get<Vector2>().magnitude > 0);
     }
 
     // Toggle gravity dengan Spacebar
@@ -39,11 +41,13 @@ public class BallMovement : MonoBehaviour
         {
             rb.gravityScale = -gravityForce;
             transform.rotation = Quaternion.Euler(0, 0, 180);
+            AudioManager.Instance.Play(AudioManager.SoundType.Jump);
         }
         else
         {
             rb.gravityScale = gravityForce;
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            AudioManager.Instance.Play(AudioManager.SoundType.JumpAlt);
         }
     }
 
@@ -52,6 +56,8 @@ public class BallMovement : MonoBehaviour
         if (collision.CompareTag("Obstacle"))
         {
             Debug.Log("Ball Mati");
+
+            AudioManager.Instance.Play(AudioManager.SoundType.Hurt);
 
             Respawn();
         }
@@ -77,5 +83,22 @@ public class BallMovement : MonoBehaviour
         Camera.main.transform.position = cameraSpawnPosition;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            
+            AudioManager.Instance.Play(AudioManager.SoundType.Land);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
 
 }

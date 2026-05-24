@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "CyberJump-Game2D-2026-05-19-22-00-19.slnx"
+    "dotnet.defaultSolution": "CyberJump-Game2D.slnx"
 }
