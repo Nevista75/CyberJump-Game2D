@@ -9,6 +9,8 @@ public class ScenePortal : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.Instance.Play(AudioManager.SoundType.EndPortal);
+
             SceneManager.LoadScene(targetScene);
         }
     }
