@@ -8,11 +8,16 @@ public class AudioManager : MonoBehaviour
     {
         Move,
         Jump,
+        JumpAlt,
         Hurt,
         Land,
+        Portal,
+        EndPortal,
         Click,
         MenuMusic,
         Level1Music,
+        Level2Music,
+        Level3Music
     }
     [System.Serializable]
     public class Sound
@@ -53,6 +58,12 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        var checkHurt = GameObject.Find("Sound_Land");
+        if (checkHurt != null)
+        {
+            Destroy(checkHurt);
+        }
+
         var soundObj = new GameObject($"Sound_{type}");
         var audioSrc = soundObj.AddComponent<AudioSource>();
 
@@ -60,6 +71,11 @@ public class AudioManager : MonoBehaviour
         audioSrc.volume = s.Volume;
 
         audioSrc.Play();
+
+        if (type.ToString().Contains("EndPortal"))
+        {
+            DontDestroyOnLoad(soundObj);
+        }
 
         Destroy(soundObj, s.Clip.length);
     }

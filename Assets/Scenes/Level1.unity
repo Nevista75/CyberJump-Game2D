@@ -4488,25 +4488,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   AllSounds:
-  - Type: 2
-    Clip: {fileID: 8300000, guid: 259c9362154493d49bf6dd87128a9f46, type: 3}
+  - Type: 3
+    Clip: {fileID: 8300000, guid: ade3c81333e54ce4e8d0e8ebdfcbf004, type: 3}
     Volume: 0.5
     Source: {fileID: 0}
   - Type: 1
-    Clip: {fileID: 8300000, guid: ade3c81333e54ce4e8d0e8ebdfcbf004, type: 3}
+    Clip: {fileID: 8300000, guid: 259c9362154493d49bf6dd87128a9f46, type: 3}
     Volume: 0.5
     Source: {fileID: 0}
   - Type: 0
     Clip: {fileID: 8300000, guid: e8267664010cdb1438c0eb1cd878a0ca, type: 3}
     Volume: 0.5
     Source: {fileID: 0}
-  - Type: 3
-    Clip: {fileID: 8300000, guid: 02f97af6e1f77394a948eb65e50e8c2c, type: 3}
+  - Type: 4
+    Clip: {fileID: 8300000, guid: c97c70b6213529e4886208696659daf1, type: 3}
+    Volume: 0.5
+    Source: {fileID: 0}
+  - Type: 5
+    Clip: {fileID: 8300000, guid: d9d8ac9f44f4f904789cdb8efbe60943, type: 3}
     Volume: 0.5
     Source: {fileID: 0}
   - Type: 6
-    Clip: {fileID: 8300000, guid: c342fd87ce0fdc64982fdcb082eb46b7, type: 3}
-    Volume: 1
+    Clip: {fileID: 8300000, guid: cd3f89bf06255e64895ead134191eae3, type: 3}
+    Volume: 0.5
+    Source: {fileID: 0}
+  - Type: 9
+    Clip: {fileID: 8300000, guid: c744a8e2438150d438a7341f9d0590e7, type: 3}
+    Volume: 0.25
     Source: {fileID: 0}
   SelectedSound: 0
 --- !u!4 &1998111866

@@ -769,12 +769,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   AllSounds:
-  - Type: 4
+  - Type: 7
     Clip: {fileID: 8300000, guid: 083e7848c342c3e4a86aabe5b2e4f4e1, type: 3}
     Volume: 1
     Source: {fileID: 0}
-  - Type: 5
-    Clip: {fileID: 8300000, guid: 9fb7bb8bcba41ff428ef8e325d2c8696, type: 3}
+  - Type: 8
+    Clip: {fileID: 8300000, guid: 2a606abf2568ead44979c1370f720741, type: 3}
     Volume: 0.5
     Source: {fileID: 0}
   SelectedSound: 4
