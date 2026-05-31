@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc4532d5a3a90174b9f918c7e3afd3dd
+guid: c2a8b3f95d81c2e499bdd8d40bd91787
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7560975059316063060
-    second: Spike@2x_0
+      213: -2080416251062365207
+    second: Spike Green_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spike@2x_0
+      name: Spike Green_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2161
-        height: 1976
+        width: 1081
+        height: 989
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45b3f16b1cafde860800000000000000
-      internalID: 7560975059316063060
+      spriteID: 9e35a723170e023e0800000000000000
+      internalID: -2080416251062365207
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Spike@2x_0: 7560975059316063060
+      Spike Green_0: -2080416251062365207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
