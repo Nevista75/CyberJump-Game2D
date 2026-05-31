@@ -75,7 +75,7 @@ public class RocketMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Obstacle")){
+        if(collision.gameObject.CompareTag("Obstacle")){
             Debug.Log("Player Mati");
             Die();
         } 
