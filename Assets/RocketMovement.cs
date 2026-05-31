@@ -11,7 +11,7 @@ public class RocketMovement : MonoBehaviour
     float[] SpeedValues = { 5f, 10.4f, 12.96f, 15.6f, 19.27f };
 
     public Transform Sprite;
-    public CameraFollow cameraFollow;
+    public RocketCameraFollow cameraFollow;
 
     private Vector3 spawnPosition;
 
@@ -29,7 +29,7 @@ public class RocketMovement : MonoBehaviour
         spawnPosition = transform.position;
         if (cameraFollow == null)
         {
-            cameraFollow = Object.FindAnyObjectByType<CameraFollow>();
+            cameraFollow = Object.FindAnyObjectByType<RocketCameraFollow>();
         }
     }
 

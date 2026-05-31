@@ -1895,6 +1895,7 @@ GameObject:
   - component: {fileID: 1358447446}
   - component: {fileID: 1358447449}
   - component: {fileID: 1358447450}
+  - component: {fileID: 1358447451}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2032,8 +2033,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3806383c450ed447a87d8edb655c441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &1358447451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358447445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd85caa393c31441bb82ba4e242f9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RocketCameraFollow
   player: {fileID: 492106004}
-  moveSpeed: 5
 --- !u!1001 &1390103803
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -360,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7197588464674388484, guid: a2df35cef268a59469fd924e2057f6ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2957008
+      value: -3.93
       objectReference: {fileID: 0}
     - target: {fileID: 7197588464674388484, guid: a2df35cef268a59469fd924e2057f6ac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -987,12 +987,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c307ae6238f7b5d498432250f998b53c, type: 3}
+  m_Script: {fileID: 11500000, guid: 90ada7d766b50494488020b21590013a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   player: {fileID: 1956420106}
   upperLimit: 2
-  verticalOffset: 1.2
+  verticalOffset: 1.5
 --- !u!1001 &553332504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2728,7 +2728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 582704896179329468, guid: 7b883d3dfd8ba884f9d6c9123b04f7fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.5119095
+      value: 13.097909
       objectReference: {fileID: 0}
     - target: {fileID: 582704896179329468, guid: 7b883d3dfd8ba884f9d6c9123b04f7fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3867,7 +3867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2196429933099664712, guid: 349763b25b6fb5646923ed5a4b02399a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.694
+      value: 12.28
       objectReference: {fileID: 0}
     - target: {fileID: 2196429933099664712, guid: 349763b25b6fb5646923ed5a4b02399a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4629,7 +4629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7197588464674388484, guid: a2df35cef268a59469fd924e2057f6ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.25
+      value: -2.8843002
       objectReference: {fileID: 0}
     - target: {fileID: 7197588464674388484, guid: a2df35cef268a59469fd924e2057f6ac, type: 3}
       propertyPath: m_LocalPosition.y
