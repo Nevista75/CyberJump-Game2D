@@ -8,9 +8,12 @@ public class RocketMovement : MonoBehaviour
     public Speeds CurrentSpeed;
 
     //                        0      1      2       3      4
-    float[] SpeedValues = { 5.6f, 10.4f, 12.96f, 15.6f, 19.27f };
+    float[] SpeedValues = { 5f, 10.4f, 12.96f, 15.6f, 19.27f };
 
     public Transform Sprite;
+    public CameraFollow cameraFollow;
+
+    private Vector3 spawnPosition;
 
     Rigidbody2D rb;
     PlayerInput inputActions;
@@ -22,6 +25,12 @@ public class RocketMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         inputActions = new PlayerInput();
+
+        spawnPosition = transform.position;
+        if (cameraFollow == null)
+        {
+            cameraFollow = Object.FindAnyObjectByType<CameraFollow>();
+        }
     }
 
     void OnEnable()
@@ -39,7 +48,7 @@ public class RocketMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Gerak horizontal otomatis
-        transform.position += Vector3.right * SpeedValues[(int)CurrentSpeed] * Time.deltaTime;
+        transform.position += Vector3.right * SpeedValues[(int)CurrentSpeed] * Time.fixedDeltaTime;
 
         // Clamp kecepatan jatuh maksimum
         if (rb.linearVelocity.y < -24.2f)
@@ -65,15 +74,26 @@ public class RocketMovement : MonoBehaviour
         rb.gravityScale *= Gravity;
     }
 
-    // void OnCollisionEnter2D(Collision2D collision){
-    //     if(collision.CompareTag("Ground")){
-    //         Debug.Log("Player Mati");
-    //         rb.linearVelocity = Vector2.zero;
-    //         transform.position = spawnPosition;
-    //     } else if(collision.CompareTag("Obstacle")){
-    //         Debug.Log("Player Mati");
-    //         rb.linearVelocity = Vector2.zero;
-    //         transform.position = spawnPosition;
-    //     }
-    // }
+    void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Obstacle")){
+            Debug.Log("Player Mati");
+            Die();
+        } 
+    }
+
+    public void Die()
+    {
+        // Reset player
+        transform.position = spawnPosition;
+
+        // Reset velocity
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        // Reset kamera
+        if (cameraFollow != null)
+        {
+            cameraFollow.ResetCamera();
+        }
+    }
 }
