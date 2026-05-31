@@ -3292,7 +3292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5155a8b556b1e4a449dbb3d34fa3676f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScenePortal
-  targetScene: Region2
+  targetScene: Level2
 --- !u!58 &1489036642
 CircleCollider2D:
   m_ObjectHideFlags: 0
