@@ -77,6 +77,7 @@ public class RocketMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Obstacle")){
             Debug.Log("Player Mati");
+            AudioManager.Instance.Play(AudioManager.SoundType.Hurt);
             Die();
         } 
     }
