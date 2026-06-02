@@ -5,6 +5,7 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityForce = 10f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private Rigidbody2D rb;
     private float moveInput;
