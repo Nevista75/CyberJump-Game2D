@@ -76,13 +76,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Obstacle") || collision.CompareTag("UFO"))
         {
             Debug.Log("Player Mati");
 
             rb.linearVelocity = Vector2.zero;
 
             transform.position = spawnPosition;
+
+            // Reset semua UFO
+            GameObject[] ufos = GameObject.FindGameObjectsWithTag("UFO");
+            foreach (GameObject ufoObj in ufos)
+            {
+                UfoMovement ufo = ufoObj.GetComponent<UfoMovement>();
+                if (ufo != null)
+                {
+                    ufo.ResetPosition();
+                }
+            }
         }
     }
 }
