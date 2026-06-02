@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpForce = 25f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private bool isGrounded;
 
@@ -60,6 +61,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+
+        if (moveInput.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (moveInput.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -93,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
             transform.position = spawnPosition;
 
             Camera.main.transform.position = cameraSpawnPosition;
+            
         }
     }
 }

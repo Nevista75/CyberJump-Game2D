@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3561226856768679448, guid: 3e35ed2f3a1d2c949ad5a92e52db3b30, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5798325285090346020, guid: 3e35ed2f3a1d2c949ad5a92e52db3b30, type: 3}
       propertyPath: m_Name
       value: Portal Area 1 Variant
@@ -130,3 +134,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PortalTeleport
   teleportTarget: {fileID: 0}
   cameraTarget: {fileID: 0}
+  background: {fileID: 0}
+  backgroundTarget: {fileID: 0}
