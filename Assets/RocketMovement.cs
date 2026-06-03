@@ -68,11 +68,7 @@ public class RocketMovement : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-<<<<<<< HEAD
-        if(collision.gameObject.CompareTag("Obstacle")){
-=======
         if(collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("UFO")){
->>>>>>> Fathir
             Debug.Log("Player Mati");
             AudioManager.Instance.Play(AudioManager.SoundType.Hurt);
             Die();
