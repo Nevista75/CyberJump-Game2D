@@ -1420,6 +1420,17 @@ MonoBehaviour:
   player: {fileID: 721006200}
   upperLimit: 2
   verticalOffset: 1.5
+--- !u!114 &532746461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4161271470908802876, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
+  m_PrefabInstance: {fileID: 3534769034841706575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5155a8b556b1e4a449dbb3d34fa3676f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScenePortal
 --- !u!1001 &553332504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5273,6 +5284,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 383214594877727473, guid: b786fab2ddea7444ba8348adcf85a948, type: 3}
+      propertyPath: portal
+      value: 
+      objectReference: {fileID: 532746461}
     - target: {fileID: 383214594877727473, guid: b786fab2ddea7444ba8348adcf85a948, type: 3}
       propertyPath: background
       value: 
