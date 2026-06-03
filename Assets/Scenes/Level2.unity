@@ -3624,7 +3624,7 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Type: 4
     Clip: {fileID: 8300000, guid: c97c70b6213529e4886208696659daf1, type: 3}
-    Volume: 0.5
+    Volume: 0.3
     Source: {fileID: 0}
   - Type: 10
     Clip: {fileID: 8300000, guid: bf7970e9d12a99e49bf2ee496902df8b, type: 3}
@@ -6542,7 +6542,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4161271470908802876, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
       propertyPath: targetScene
-      value: RocketScene
+      value: LevelEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819484071591740563, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819484071591740563, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8786540697334462809, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
       propertyPath: m_Name
