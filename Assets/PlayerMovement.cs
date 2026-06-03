@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpForce = 25f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private bool isGrounded;
 
@@ -60,6 +61,15 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+
+        if (moveInput.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (moveInput.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -82,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Obstacle") || collision.CompareTag("UFO"))
         {
             Debug.Log("Player Mati");
 
@@ -93,6 +103,17 @@ public class PlayerMovement : MonoBehaviour
             transform.position = spawnPosition;
 
             Camera.main.transform.position = cameraSpawnPosition;
+            
+            // Reset semua UFO
+            GameObject[] ufos = GameObject.FindGameObjectsWithTag("UFO");
+            foreach (GameObject ufoObj in ufos)
+            {
+                UfoMovement ufo = ufoObj.GetComponent<UfoMovement>();
+                if (ufo != null)
+                {
+                    ufo.ResetPosition();
+                }
+            }
         }
     }
 }

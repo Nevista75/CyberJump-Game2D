@@ -25,4 +25,15 @@ public class MainMenu : MonoBehaviour
 
         Debug.Log("Game Keluar");
     }
+
+    public void BackToMainMenu()
+    {
+        AudioManager.Instance.Play(AudioManager.SoundType.Click);
+        Invoke(nameof(LoadMenu), 0.5f);
+    }
+
+    private void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
