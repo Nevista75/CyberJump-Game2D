@@ -1,29 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : PlayerRespawn
 {
-    private Rigidbody2D rb;
     private PlayerInput inputActions;
     private Vector2 moveInput;
-    private Vector3 spawnPosition;
-    private Vector3 cameraSpawnPosition;
 
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpForce = 25f;
-    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private bool isGrounded;
 
-    private void Awake()
+    protected override void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-
+        base.Awake();
         inputActions = new PlayerInput();
-
-        spawnPosition = transform.position;
-
-        cameraSpawnPosition = Camera.main.transform.position;
     }
 
     private void OnEnable()
@@ -50,16 +41,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
+        if (isDead) return;
+
         if (isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-
             AudioManager.Instance.Play(AudioManager.SoundType.Jump);
         }
     }
 
     private void FixedUpdate()
     {
+        if (isDead) return;
         rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
 
         if (moveInput.x > 0)
@@ -95,25 +88,15 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Obstacle") || collision.CompareTag("UFO"))
         {
             Debug.Log("Player Mati");
-
-            AudioManager.Instance.Play(AudioManager.SoundType.Hurt);
-
-            rb.linearVelocity = Vector2.zero;
-
-            transform.position = spawnPosition;
-
-            Camera.main.transform.position = cameraSpawnPosition;
-            
-            // Reset semua UFO
-            GameObject[] ufos = GameObject.FindGameObjectsWithTag("UFO");
-            foreach (GameObject ufoObj in ufos)
-            {
-                UfoMovement ufo = ufoObj.GetComponent<UfoMovement>();
-                if (ufo != null)
-                {
-                    ufo.ResetPosition();
-                }
-            }
+            Die();
         }
     }
+
+    protected override void Respawn()
+    {
+        transform.position = spawnPosition;
+        Camera.main.transform.position = cameraSpawnPosition;
+        isGrounded = false;
+    }
+
 }

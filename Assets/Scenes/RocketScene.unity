@@ -4853,7 +4853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478230788107428705, guid: 2a47149ddfeb67445a28ceb71f02964b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.44
+      value: -1.579
       objectReference: {fileID: 0}
     - target: {fileID: 7478230788107428705, guid: 2a47149ddfeb67445a28ceb71f02964b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5628,6 +5628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c31faf366125461438acae7241ac03fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RocketMovement
+  spriteRenderer: {fileID: 1997103800}
   rocketData: {fileID: 11400000, guid: 7aaebd1f7d02c3b47b94927486fe36c4, type: 2}
   CurrentSpeed: 0
   Sprite: {fileID: 1997103801}
@@ -5765,7 +5766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478230788107428705, guid: 2a47149ddfeb67445a28ceb71f02964b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.886
+      value: 1.829
       objectReference: {fileID: 0}
     - target: {fileID: 7478230788107428705, guid: 2a47149ddfeb67445a28ceb71f02964b, type: 3}
       propertyPath: m_LocalPosition.z

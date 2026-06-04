@@ -2119,9 +2119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3aa2706078903a4f8d453d5eb1f7a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  spriteRenderer: {fileID: 1266326155}
   moveSpeed: 7
   jumpForce: 16
-  spriteRenderer: {fileID: 1266326155}
 --- !u!61 &721006197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4597,7 +4597,7 @@ Transform:
   m_GameObject: {fileID: 1810406208}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: 4, z: 0}
+  m_LocalPosition: {x: 22, y: 3.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
