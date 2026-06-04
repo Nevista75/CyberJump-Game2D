@@ -6,7 +6,7 @@ public class PlayHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 {
     private Vector3 originalScale;
 
-    [SerializeField] private float hoverScale = 1.2f;
+    [SerializeField] private float hoverScale = 1.1f;
 
     private void Start()
     {

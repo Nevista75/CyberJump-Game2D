@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990320903286b264fac550f259985d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayHover
-  hoverScale: 1.2
+  hoverScale: 1.1
 --- !u!1 &138304060
 GameObject:
   m_ObjectHideFlags: 0
