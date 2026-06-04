@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1400001
+      value: 1.133
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1400001
+      value: 1.133
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -698,7 +698,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5578420127694576099, guid: c1e2689f534695e429e7989cf6bbda30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1346,7 +1346,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5578420127694576099, guid: c1e2689f534695e429e7989cf6bbda30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2214,7 +2214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1400001
+      value: 1.133
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3045,7 +3045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1400001
+      value: 1.133
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3643,7 +3643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.14
+      value: 1.1329999
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3931,8 +3931,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 0.8}
+  m_Offset: {x: 0.15, y: 0}
+  m_Size: {x: 0.5, y: 1}
   m_Direction: 0
 --- !u!1001 &1656885066
 PrefabInstance:
@@ -4647,7 +4647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1400001
+      value: 1.133
       objectReference: {fileID: 0}
     - target: {fileID: 1437444952456506532, guid: cabd5d4f8c281a045853a7f916e9eda2, type: 3}
       propertyPath: m_LocalPosition.z
