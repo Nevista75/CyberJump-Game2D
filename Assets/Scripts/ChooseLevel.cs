@@ -7,18 +7,12 @@ public class ChooseLevel : MonoBehaviour
 
     private void Start()
     {
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.ChangeMusic(AudioManager.SoundType.MenuMusic);
-        }
+        AudioManager.Instance.ChangeMusic(AudioManager.SoundType.MenuMusic);
     }
 
     public void PlayGame(string sceneName)
     {
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.Play(AudioManager.SoundType.Click);
-        }
+        AudioManager.Instance.Play(AudioManager.SoundType.Click);
 
         sceneToLoad = sceneName;
         Invoke(nameof(ExecuteLoadScene), 0.5f);
