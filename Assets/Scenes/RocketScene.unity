@@ -3871,6 +3871,10 @@ PrefabInstance:
       propertyPath: targetScene
       value: LevelEnd
       objectReference: {fileID: 0}
+    - target: {fileID: 4161271470908802876, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
+      propertyPath: unlockLevel
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7819484071591740563, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
       propertyPath: m_Radius
       value: 0.0001

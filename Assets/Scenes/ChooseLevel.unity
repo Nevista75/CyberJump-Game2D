@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -48.20999}
+  m_AnchoredPosition: {x: 0, y: 13.790001}
   m_SizeDelta: {x: 984.99, y: 184.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36329805
@@ -166,11 +166,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36329803}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20650d80978096442a420d3d8ac424e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChooseLevel
+  level2Button: {fileID: 0}
+  level3Button: {fileID: 0}
+  level2Unlocked: {fileID: 0}
+  level2Locked: {fileID: 0}
+  level3Unlocked: {fileID: 0}
+  level3Locked: {fileID: 0}
 --- !u!114 &36329806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 170}
+  m_AnchoredPosition: {x: 0, y: 232}
   m_SizeDelta: {x: 844.9, y: 217.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444124097
@@ -494,11 +500,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444124095}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20650d80978096442a420d3d8ac424e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChooseLevel
+  level2Button: {fileID: 0}
+  level3Button: {fileID: 0}
+  level2Unlocked: {fileID: 0}
+  level2Locked: {fileID: 0}
+  level3Unlocked: {fileID: 0}
+  level3Locked: {fileID: 0}
 --- !u!114 &444124101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +568,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20650d80978096442a420d3d8ac424e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChooseLevel
+  level2Button: {fileID: 36329806}
+  level3Button: {fileID: 2137892774}
+  level2Unlocked: {fileID: 3672912162280388435, guid: 4c88fff0914f8f74e973fb02127c4ca5, type: 3}
+  level2Locked: {fileID: 1041061411647960526, guid: 1df7a0bd9a3a44c478acf05fd37fff7f, type: 3}
+  level3Unlocked: {fileID: -8283599271752817588, guid: eceabb16ed507864e82dd1acd6752d53, type: 3}
+  level3Locked: {fileID: -1824414228144610265, guid: eb20c2a50f011eb4baa1e8bc640dc6d4, type: 3}
 --- !u!1 &756807859
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +774,152 @@ MonoBehaviour:
     Volume: 1
     Source: {fileID: 0}
   SelectedSound: 0
+--- !u!1 &1419719954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419719955}
+  - component: {fileID: 1419719958}
+  - component: {fileID: 1419719957}
+  - component: {fileID: 1419719956}
+  - component: {fileID: 1419719959}
+  m_Layer: 5
+  m_Name: Reset Progress
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1419719955
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419719954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1761305286}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 762, y: -0.0000038147}
+  m_SizeDelta: {x: 263.37, y: 207.82}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1419719956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419719954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1419719957}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 577246010}
+        m_TargetAssemblyTypeName: ChooseLevel, Assembly-CSharp
+        m_MethodName: ResetProgress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1419719957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419719954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7976477078747126137, guid: 70a0100663971fc488a7afd5c1374fc7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1419719958
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419719954}
+  m_CullTransparentMesh: 1
+--- !u!114 &1419719959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419719954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990320903286b264fac550f259985d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayHover
+  hoverScale: 1.1
 --- !u!1 &1440195754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1388,7 @@ RectTransform:
   - {fileID: 36329804}
   - {fileID: 2137892772}
   - {fileID: 756807860}
+  - {fileID: 1419719955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1376,7 +1541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: -234.59999}
+  m_AnchoredPosition: {x: 17, y: -172.6}
   m_SizeDelta: {x: 1083.6, y: 188.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2137892773
@@ -1386,11 +1551,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137892771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20650d80978096442a420d3d8ac424e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChooseLevel
+  level2Button: {fileID: 0}
+  level3Button: {fileID: 0}
+  level2Unlocked: {fileID: 0}
+  level2Locked: {fileID: 0}
+  level3Unlocked: {fileID: 0}
+  level3Locked: {fileID: 0}
 --- !u!114 &2137892774
 MonoBehaviour:
   m_ObjectHideFlags: 0
