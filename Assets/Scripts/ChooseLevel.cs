@@ -80,8 +80,8 @@ public class ChooseLevel : MonoBehaviour
 
     public void ResetProgress()
     {
+        AudioManager.Instance.Play(AudioManager.SoundType.Click);
         PlayerPrefs.DeleteAll();
-
         Debug.Log("Save Data Dihapus");
     }
 }
