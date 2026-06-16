@@ -25,7 +25,7 @@ public class ChooseLevel : MonoBehaviour
         UpdateLevelButtons();
     }
 
-     private void UpdateLevelButtons()
+    private void UpdateLevelButtons()
     {
         int unlocked = SaveManager.GetHighestUnlockedLevel();
 

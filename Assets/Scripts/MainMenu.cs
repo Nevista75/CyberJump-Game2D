@@ -27,10 +27,11 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        // Application.Quit();
+        AudioManager.Instance.Play(AudioManager.SoundType.Click);
         Debug.Log("Game Keluar");
         #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
+                Debug.Log("Game Keluar");
         #else
                 Application.Quit();
         #endif
