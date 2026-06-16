@@ -5470,6 +5470,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1844706707}
   moveSpeed: 5
   gravityForce: 10
+  deadEffectPrefab: {fileID: 3451433476207949625, guid: 3df2f52df7db477429731dc02464e9f9, type: 3}
+  lifetimeLedakan: 2
 --- !u!114 &1567421708
 MonoBehaviour:
   m_ObjectHideFlags: 0

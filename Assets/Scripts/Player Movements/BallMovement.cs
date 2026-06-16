@@ -10,6 +10,10 @@ public class BallMovement : PlayerRespawn
     private bool gravityUp = false;
     private bool isGrounded;
 
+    public GameObject deadEffectPrefab;
+    public float lifetimeLedakan = 2f;
+    private GameObject currentLedakan;
+
     private void FixedUpdate()
     {
         if (isDead) return;
@@ -56,6 +60,19 @@ public class BallMovement : PlayerRespawn
         }
     }
 
+    public override void Die()
+    {
+        if (isDead) return;
+
+        if (deadEffectPrefab != null)
+        {
+            currentLedakan = Instantiate(deadEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(currentLedakan, lifetimeLedakan);
+        }
+
+        base.Die();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -76,6 +93,11 @@ public class BallMovement : PlayerRespawn
 
     protected override void Respawn()
     {
+        if (currentLedakan != null)
+        {
+            Destroy(currentLedakan);
+        }
+
         transform.position = spawnPosition;
         rb.linearVelocity = Vector2.zero;
         moveInput = 0f;

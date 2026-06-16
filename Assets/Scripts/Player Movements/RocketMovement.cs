@@ -10,10 +10,14 @@ public class RocketMovement : PlayerRespawn
     public Speeds CurrentSpeed;
     public Transform Sprite;
     public RocketCameraFollow cameraFollow;
+    public ParticleSystem fireParticle;
+    
+    public GameObject deadEffectPrefab;
+    public float lifetimeLedakan = 2f;
 
     PlayerInput inputActions;
-
     bool isHolding = false;
+    private GameObject currentLedakan;
 
     protected override void Awake()
     {
@@ -75,8 +79,39 @@ public class RocketMovement : PlayerRespawn
         } 
     }
 
+    public override void Die()
+    {
+        if (isDead) return; // Mencegah ledakan muncul berkali-kali
+
+        if (fireParticle != null)
+        {
+            fireParticle.Stop(); // Hentikan partikel baru agar tidak keluar
+            fireParticle.Clear(); // Hapus sisa partikel di layar seketika
+        }
+
+        if (deadEffectPrefab != null)
+        {
+            currentLedakan = Instantiate(deadEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(currentLedakan, lifetimeLedakan);
+        }
+
+        base.Die();
+
+
+    }
+
     protected override void Respawn()
     {
+        if (currentLedakan != null)
+        {
+            Destroy(currentLedakan);
+        }
+
+        if (fireParticle != null)
+        {
+            fireParticle.Play(); // Mainkan ulang partikel saat respawn
+        }
+
         // Reset player
         transform.position = spawnPosition;
 

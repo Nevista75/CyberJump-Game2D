@@ -2049,7 +2049,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2315383244217142891, guid: cdf11034b17e57d4bb1a14097c59bd04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2122,6 +2122,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1266326155}
   moveSpeed: 7
   jumpForce: 16
+  deadEffectPrefab: {fileID: 3451433476207949625, guid: 3df2f52df7db477429731dc02464e9f9, type: 3}
+  lifetimeLedakan: 1
 --- !u!61 &721006197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3367,7 +3369,7 @@ GameObject:
   - component: {fileID: 1266326155}
   m_Layer: 0
   m_Name: Character Sprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

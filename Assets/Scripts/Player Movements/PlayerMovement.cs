@@ -11,6 +11,10 @@ public class PlayerMovement : PlayerRespawn
 
     private bool isGrounded;
 
+    public GameObject deadEffectPrefab;
+    public float lifetimeLedakan = 2f;
+    private GameObject currentLedakan;
+
     protected override void Awake()
     {
         base.Awake();
@@ -92,8 +96,27 @@ public class PlayerMovement : PlayerRespawn
         }
     }
 
+    public override void Die()
+    {
+        if (isDead) return;
+
+        if (deadEffectPrefab != null)
+        {
+            currentLedakan = Instantiate(deadEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(currentLedakan, lifetimeLedakan);
+            Debug.Log("Ledakan muncul");
+        }
+
+        base.Die();
+    }
+
     protected override void Respawn()
     {
+        if (currentLedakan != null)
+        {
+            Destroy(currentLedakan);
+        }
+
         transform.position = spawnPosition;
         Camera.main.transform.position = cameraSpawnPosition;
         isGrounded = false;
