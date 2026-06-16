@@ -8162,6 +8162,7 @@ GameObject:
   - component: {fileID: 1358447446}
   - component: {fileID: 1358447449}
   - component: {fileID: 1358447450}
+  - component: {fileID: 1358447451}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8300,6 +8301,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   player: {fileID: 1997103801}
+--- !u!114 &1358447451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358447445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a881afd95e2fc4b9d785174f88f6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LetterBoxCamera
 --- !u!114 &1364198597 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 105126668601260713, guid: 935ac347a65ef5548b3ebd3532e34fdb, type: 3}

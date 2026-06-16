@@ -2741,12 +2741,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632251534}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd85caa393c31441bb82ba4e242f9d1, type: 3}
+  m_Script: {fileID: 11500000, guid: c1a881afd95e2fc4b9d785174f88f6f9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RocketCameraFollow
-  player: {fileID: 1567421704}
+  m_EditorClassIdentifier: Assembly-CSharp::LetterBoxCamera
 --- !u!1001 &662449945
 PrefabInstance:
   m_ObjectHideFlags: 0
