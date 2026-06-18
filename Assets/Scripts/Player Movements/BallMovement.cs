@@ -1,41 +1,40 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BallMovement : MonoBehaviour
+public class BallMovement : PlayerRespawn
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityForce = 10f;
-    [SerializeField] private SpriteRenderer spriteRenderer;
 
-    private Rigidbody2D rb;
     private float moveInput;
     private bool gravityUp = false;
     private bool isGrounded;
-    private Vector3 spawnPosition;
-    private Vector3 cameraSpawnPosition;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        spawnPosition = transform.position;
-        cameraSpawnPosition = Camera.main.transform.position;
-    }
+    public GameObject deadEffectPrefab;
+    public float lifetimeLedakan = 2f;
+    private GameObject currentLedakan;
 
     private void FixedUpdate()
     {
+        if (isDead) return;
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
     // Gerak kiri kanan
     public void OnMove(InputValue value)
     {
+        if (isDead) return;
+
         moveInput = value.Get<Vector2>().x;
+        
         if (isGrounded) AudioManager.Instance.PlayLong(AudioManager.SoundType.Move, value.Get<Vector2>().magnitude > 0);
     }
 
     // Toggle gravity dengan Spacebar
     public void OnToggleGravity(InputValue value)
     {
+        if (isDead) return;
+
         gravityUp = !gravityUp;
 
         if (gravityUp)
@@ -57,31 +56,21 @@ public class BallMovement : MonoBehaviour
         if (collision.CompareTag("Obstacle"))
         {
             Debug.Log("Ball Mati");
-
-            AudioManager.Instance.Play(AudioManager.SoundType.Hurt);
-
-            Respawn();
+            Die();
         }
     }
 
-     private void Respawn()
+    public override void Die()
     {
-        // Stop velocity
-        rb.linearVelocity = Vector2.zero;
+        if (isDead) return;
 
-        // Balik ke posisi awal
-        transform.position = spawnPosition;
+        if (deadEffectPrefab != null)
+        {
+            currentLedakan = Instantiate(deadEffectPrefab, transform.position, Quaternion.identity);
+            Destroy(currentLedakan, lifetimeLedakan);
+        }
 
-        // Reset gravity
-        gravityUp = false;
-
-        rb.gravityScale = gravityForce;
-
-        // Reset rotasi visual
-        transform.rotation = Quaternion.Euler(0, 0, 0);
-
-        // Reset kamera
-        Camera.main.transform.position = cameraSpawnPosition;
+        base.Die();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -102,4 +91,22 @@ public class BallMovement : MonoBehaviour
         }
     }
 
+    protected override void Respawn()
+    {
+        if (currentLedakan != null)
+        {
+            Destroy(currentLedakan);
+        }
+
+        transform.position = spawnPosition;
+        rb.linearVelocity = Vector2.zero;
+        moveInput = 0f;
+
+        gravityUp = false;
+        isGrounded = false;
+
+        rb.gravityScale = gravityForce;
+        transform.rotation = Quaternion.identity;
+        Camera.main.transform.position = cameraSpawnPosition;
+    }
 }

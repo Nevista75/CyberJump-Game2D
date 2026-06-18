@@ -3,37 +3,48 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private string sceneToLoad;
+    
     private void Start()
     {
         AudioManager.Instance.ChangeMusic(AudioManager.SoundType.MenuMusic);
     }
 
-    public void PlayGame()
+    public void PlayGame(string sceneName)
     {
         AudioManager.Instance.Play(AudioManager.SoundType.Click);
-        Invoke(nameof(loadLevel1), 0.5f);
+        sceneToLoad = sceneName;
+        Invoke(nameof(ExecuteLoadScene), 0.5f);
     }
 
-    private void loadLevel1()
+    private void ExecuteLoadScene()
     {
-        SceneManager.LoadScene("Level1");
+        if (!string.IsNullOrEmpty(sceneToLoad))
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
     }
 
     public void QuitGame()
     {
-        Application.Quit();
-
+        AudioManager.Instance.Play(AudioManager.SoundType.Click);
         Debug.Log("Game Keluar");
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+                Debug.Log("Game Keluar");
+        #else
+                Application.Quit();
+        #endif
     }
 
     public void BackToMainMenu()
     {
         AudioManager.Instance.Play(AudioManager.SoundType.Click);
-        Invoke(nameof(LoadMenu), 0.5f);
+        Invoke(nameof(ExecuteMenuScene), 0.5f);
     }
 
-    private void LoadMenu()
+    private void ExecuteMenuScene()
     {
-        SceneManager.LoadScene("MainMenu");
+       SceneManager.LoadScene("ChooseLevel"); 
     }
 }

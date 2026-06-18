@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 58561552}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.3, y: -2.5, z: 0}
+  m_LocalPosition: {x: 25.5, y: -2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2741,12 +2741,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632251534}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dd85caa393c31441bb82ba4e242f9d1, type: 3}
+  m_Script: {fileID: 11500000, guid: c1a881afd95e2fc4b9d785174f88f6f9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RocketCameraFollow
-  player: {fileID: 1567421704}
+  m_EditorClassIdentifier: Assembly-CSharp::LetterBoxCamera
 --- !u!1001 &662449945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3624,10 +3623,18 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Type: 4
     Clip: {fileID: 8300000, guid: c97c70b6213529e4886208696659daf1, type: 3}
-    Volume: 0.5
+    Volume: 0.3
     Source: {fileID: 0}
   - Type: 10
     Clip: {fileID: 8300000, guid: bf7970e9d12a99e49bf2ee496902df8b, type: 3}
+    Volume: 0.5
+    Source: {fileID: 0}
+  - Type: 5
+    Clip: {fileID: 8300000, guid: d9d8ac9f44f4f904789cdb8efbe60943, type: 3}
+    Volume: 0.5
+    Source: {fileID: 0}
+  - Type: 6
+    Clip: {fileID: 8300000, guid: cd3f89bf06255e64895ead134191eae3, type: 3}
     Volume: 0.5
     Source: {fileID: 0}
   SelectedSound: 0
@@ -5459,9 +5466,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93aa6b2488b025946aa36197905e37f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallMovement
+  spriteRenderer: {fileID: 1844706707}
   moveSpeed: 5
   gravityForce: 10
-  spriteRenderer: {fileID: 1844706707}
+  deadEffectPrefab: {fileID: 3451433476207949625, guid: 3df2f52df7db477429731dc02464e9f9, type: 3}
+  lifetimeLedakan: 2
 --- !u!114 &1567421708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6054,7 +6063,7 @@ Transform:
   m_GameObject: {fileID: 1844706706}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.009, z: 0}
   m_LocalScale: {x: 0.059664797, y: 0.059664797, z: 0.059664797}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6542,7 +6551,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4161271470908802876, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
       propertyPath: targetScene
-      value: RocketScene
+      value: LevelEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161271470908802876, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
+      propertyPath: unlockLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819484071591740563, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819484071591740563, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8786540697334462809, guid: 1603f0c3e65c7e34ca66af0d5661cf81, type: 3}
       propertyPath: m_Name

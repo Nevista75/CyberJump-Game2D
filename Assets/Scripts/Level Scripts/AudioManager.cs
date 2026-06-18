@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -27,9 +26,6 @@ public class AudioManager : MonoBehaviour
 
         [Range(0f, 1f)]
         public float Volume = 1f;
-
-        [HideInInspector]
-        public AudioSource Source;
     }
 
     public static AudioManager Instance;
@@ -48,8 +44,6 @@ public class AudioManager : MonoBehaviour
         }    
     }
 
-    public SoundType SelectedSound;
-
     public void Play(SoundType type)
     {
         if (!_soundDictionary.TryGetValue(type, out Sound s))
@@ -58,10 +52,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        var checkHurt = GameObject.Find("Sound_Land");
-        if (checkHurt != null)
+        var checkLand = GameObject.Find("Sound_Land");
+        if (checkLand != null)
         {
-            Destroy(checkHurt);
+            Destroy(checkLand);
         }
 
         var soundObj = new GameObject($"Sound_{type}");
@@ -89,7 +83,7 @@ public class AudioManager : MonoBehaviour
         }
 
 
-        if(action) {
+        if (action) {
             if (_activeLongSounds.ContainsKey(type)) return;
             var soundObj = new GameObject($"Sound_{type}");
             var audioSrc = soundObj.AddComponent<AudioSource>();
